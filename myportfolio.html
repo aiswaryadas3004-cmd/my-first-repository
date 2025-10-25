@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+    }
+    header nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+    #about { background: #f9f9f9; }
+    #skills { background: #e9f7f7; }
+    #projects { background: #f7f1e9; }
+    #recommendations { background: #eef0f7; }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .skills-list, .projects-list, .recommendations-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#recommendations">Recommendations</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am Aiswarya Das, a passionate web developer skilled in front-end and back-end technologies. I love building interactive websites and applications that make an impact.</p>
+    <img src="https://image-static.collegedunia.com/public/college_data/images/appImage/15030543711445408052TRIDENTBHUBANESWARNEW.jpg?h=240&w=1000&mode=crop">
+    </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="card">HTML5</div>
+      <div class="card">CSS3</div>
+      <div class="card">JavaScript</div>
+      <div class="card">React</div>
+      <div class="card">Node.js</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-list">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio website built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Weather App</h3>
+        <p>A web app that shows real-time weather using an API.</p>
+      </div>
+      <div class="card">
+        <h3>Todo App</h3>
+        <p>A simple to-do list app with local storage support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="recommendations">
+    <h2>Recommendations</h2>
+    <div class="recommendations-list">
+      <div class="card">
+        <p>"An exceptional developer with great problem-solving skills!"</p>
+        <p>- Mentor</p>
+      </div>
+      <div class="card">
+        <p>"Delivered high-quality work on time. Highly recommend!"</p>
+        <p>- Client</p>
+      </div>
+      <div class="card">
+        <p>"A reliable and creative team player."</p>
+        <p>- Colleague</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 My Portfolio | Designed with ❤️</p>
+    <p>NAME:Aiswarya Das <br> REG.NO.:2401289034</P>
+  </footer>
+
+  <script>
+    // Example JS: Highlight active link while scrolling
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("header nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 70;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
